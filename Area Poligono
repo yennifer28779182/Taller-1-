@@ -1,0 +1,56 @@
+public class Areapoligono {
+    interface Poligono {
+        double calcularArea();
+    }
+
+    static class Triangulo implements Poligono {
+        double base, altura;
+
+        Triangulo(double base, double altura) {
+            this.base = base;
+            this.altura = altura;
+        }
+
+        @Override
+        public double calcularArea() {
+            return (base * altura) / 2;
+        }
+    }
+
+    static class Cuadrado implements Poligono {
+        double lado;
+
+        Cuadrado(double lado) {
+            this.lado = lado; // Corregido el error de sintaxis
+        }
+
+        @Override
+        public double calcularArea() {
+            return lado * lado;
+        }
+    }
+
+    static class Rectangulo implements Poligono {
+        double largo, ancho;
+
+        Rectangulo(double largo, double ancho) {
+            this.largo = largo;
+            this.ancho = ancho;
+        }
+
+        @Override
+        public double calcularArea() {
+            return largo * ancho;
+        }
+    }
+
+    public static void main(String[] args) {
+        Poligono triangulo = new Triangulo(8, 5);
+        Poligono cuadrado = new Cuadrado(3);
+        Poligono rectangulo = new Rectangulo(8, 2);
+
+        System.out.println("El área del triángulo es: " + triangulo.calcularArea());
+        System.out.println("El área del cuadrado es: " + cuadrado.calcularArea());
+        System.out.println("El área del rectángulo es: " + rectangulo.calcularArea());
+    }
+}
