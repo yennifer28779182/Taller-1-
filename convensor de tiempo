@@ -1,0 +1,19 @@
+public class convensortiempo {
+    public static void conversordetiempoenmilisegundos (int dias, int horas,int minutos, int segundos) {
+        int milisegpordia = 24 * 60 * 60 * 1000;
+        int milisegporhora = 60 * 60 * 1000;
+        int miliseegporminuto = 60 * 1000;
+        int milisegporsegundo = 1000;
+
+        int totaldemilisegundos = (dias * milisegpordia) + (horas * milisegporhora) + (minutos * miliseegporminuto) + (segundos * milisegporsegundo);
+        System.out.println("El resultado de milisegundos: " + totaldemilisegundos);
+    }
+    public static void  main(String[] args) {
+        int dias = 1;
+        int horas = 2;
+        int minutos = 30;
+        int segundos = 45;
+        conversordetiempoenmilisegundos(dias, horas, minutos, segundos);
+    }
+
+}
