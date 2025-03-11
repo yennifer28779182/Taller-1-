@@ -1,0 +1,70 @@
+
+class main {
+    public static class OperacionesSinEstructuras {
+        public static void potencia(int exponente, int... elementos) {
+            System.out.print("Potencia elevados: ");
+            for(int n : elementos) {
+                int res = 1;
+                for(int i = 0; i < exponente; i++) res *= n;
+                System.out.print(res + " ");
+            }
+        }
+
+        public static void multiplicar(int... elementos) {
+            System.out.print("\nMultiplicacion: ");
+            for(int i = 0; i < elementos.length - 1; i += 2) {
+                System.out.print((elementos[i] * elementos[i+1]) + " ");
+            }
+        }
+
+        public static void promedio(int... elementos) {
+            int suma = 0;
+            for(int n : elementos) suma += n;
+            System.out.print("\nPromedios : " + (elementos.length == 0 ? 0 : (double)suma/elementos.length));
+        }
+
+        public static void invertir(int... elementos) {
+            System.out.print("\nInvertidos : ");
+            for(int i = elementos.length - 1; i >= 0; i--) {
+                System.out.print(elementos[i] + " ");
+            }
+        }
+
+        public static void sinDuplicados(int... elementos) {
+            System.out.print("\nSinDuplicar: ");
+            int[] temp = new int[10];
+            for(int n : elementos) {
+                if(temp[n] == 0) {
+                    System.out.print(n + " ");
+                    temp[n] = 1;
+                }
+            }
+        }
+
+        public static void estaOrdenada(int... elementos) {
+            boolean orden = true;
+            for(int i = 0; i < elementos.length - 1; i++) {
+                if(elementos[i] > elementos[i+1]) {
+                    orden = false;
+                    break;
+                }
+            }
+            System.out.print("\nOrdenados : " + orden);
+        }
+        public static void combinar(int[] lista1, int[] lista2) {
+            System.out.print("\nCombinados :  ");
+            for(int n : lista1) System.out.print(n + " ");
+            for(int n : lista2) System.out.print(n + " ");
+        }
+
+        public static void main(String[] args) {
+            potencia(2, 5, 8, 4);
+            multiplicar(9, 5, 7, 10);
+            promedio(2, 3, 4);
+            invertir(8, 3,4 );
+            sinDuplicados(2, 2, 3);
+            estaOrdenada(1, 3, 5);
+            combinar(new int[]{2,3}, new int[]{5});
+        }
+    }
+}
