@@ -1,0 +1,32 @@
+
+    import java.util.Scanner;
+public class m2x2escalar {
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            int[][] matriz = new int[2][2];
+
+            System.out.println("Ingresa los elementos de la matriz:");
+            for(int i = 0; i < 2; i++) {
+                for(int j = 0; j < 2; j++) {
+                    System.out.print("Elementos de la matriz [" + i + "][" + j + "]: ");
+                    matriz [i][j] = sc.nextInt();
+                }
+            }
+
+            System.out.print("Ingrese el numero a multiplicar: ");
+            int escalar = sc.nextInt();
+
+            // Multiplico los elementos de la matriz uno por uno
+            for(int i = 0; i < 2; i++)
+                for(int j = 0; j < 2; j++)
+                    matriz [i][j] *= escalar;
+
+            System.out.println("\nMatriz resultante:");
+            for(int[] fila : matriz ) {
+                for(int n : fila)
+                    System.out.print(n + " ");
+                System.out.println();
+            }
+        }
+}
