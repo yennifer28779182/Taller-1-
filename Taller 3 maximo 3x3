@@ -1,0 +1,48 @@
+public class maximo3x3 {
+    public class Main {
+        static void sumarMatrices(int[][] matriz1, int[][] matriz2) {
+            int[][] matrizSuma = new int[matriz1.length][matriz1[0].length];
+            for (int y = 0; y < matriz1.length; y++) {
+                for (int x = 0; x < matriz1[y].length; x++) {
+                    int numeroMatriz1 = matriz1[y][x];
+                    int numeroMatriz2 = matriz2[y][x];
+                    int suma = numeroMatriz1 + numeroMatriz2;
+                    matrizSuma[y][x] = suma;
+                }
+            }
+
+            System.out.println(" Suma ");
+            for (int x = 0; x < 62; x++) {
+                System.out.print("_");
+            }
+
+            for (int y = 0; y < matriz1.length; y++) {
+                for (int x = 0; x < matriz1[y].length; x++) {
+                    System.out.printf("%5d ", matriz1[y][x]);
+                }
+                for (int x = 0; x < matriz2[y].length; x++) {
+                    System.out.printf("%5d ", matriz2[y][x]);
+                }
+
+
+                for (int x = 0; x < matrizSuma[y].length; x++) {
+                    System.out.printf("%5d ", matrizSuma[y][x]);
+                }
+
+            }
+        }
+        public static void main(String[] args) {
+            int[][] matriz1 = {
+                    {1, 2, 3},
+                    {4, 5, 6},
+                    {7, 8, 9},
+            };
+            int[][] matriz2 = {
+                    {2, 3, 5},
+                    {10, 12, 7},
+                    {1, 4, 98},
+            };
+            sumarMatrices(matriz1, matriz2);
+        }
+    }
+}
